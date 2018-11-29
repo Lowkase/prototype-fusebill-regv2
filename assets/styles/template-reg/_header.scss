@@ -1,0 +1,18 @@
+// --------------------------------------------------------------------------------
+// TEMPLATE - HEADER
+//---------------------------------------------------------------------------------
+.t-header {
+    @include j-cf();
+
+    background: $header-background;
+    border-bottom: 1px solid $template-border-color;
+
+	.logo {
+	    padding: $spacing-13;
+
+		img {
+		    height: $fixed-header-logo-height;
+		    width: $fixed-header-logo-width;
+		}
+	}
+}

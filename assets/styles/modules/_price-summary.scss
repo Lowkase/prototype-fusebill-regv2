@@ -1,0 +1,48 @@
+﻿// --------------------------------------------------------------------------------
+// MODULES - PRICE SUMMARY
+// --------------------------------------------------------------------------------
+.m-price-summary {
+    margin: 0 0 $spacing-13;
+
+    .charges {
+	    > div {
+	        margin-bottom: $spacing-13;
+	        text-align: right;
+
+	        div:first-child {
+	            font-weight: $font-weight-semibold;
+	        }
+	    }
+    }
+
+    // TAXES
+    .taxes {
+    	@include font-size(0.7500); // 12px
+
+    	text-align: right;
+    }
+}
+
+
+// EXAMPLE
+/*
+	<div class="m-price-summary">            
+
+	    <div class="charges">
+	        <div>
+	            <div>Initial Charge:</div>
+	            <div>$999,999,999.99 USD</div>
+	        </div>
+	        <div>
+	            <div>Recurring Charge:</div>
+	            <div>$999,999,999.99 USD / per month</div>
+	        </div>
+	    </div>
+
+	    <!-- TAXES -->
+	    <div class="taxes">
+	        * Taxes may be applicable and will be displayed before final purchase
+	    </div>
+
+	</div>
+*/

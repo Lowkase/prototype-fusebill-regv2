@@ -1,0 +1,39 @@
+// --------------------------------------------------------------------------------
+// VIEW - CONFIRM
+//---------------------------------------------------------------------------------
+.v-confirm {
+
+    .confirm-con {
+        background: $color-white;
+        box-shadow: $box-shadow-all;
+        height: 400px;
+        margin: $spacing-34 auto 0 auto;
+        padding: $spacing-21;
+        text-align: center;
+        width: 400px;
+
+        @media ($bp-smart-tablet) {
+            width: 294px;
+        }
+    }
+
+    svg {
+        display: inline-block;
+        fill: $template-button-primary;
+        height: 60px;
+        margin-bottom: $spacing-21;
+        width: 60px;
+    }
+
+    .complete {
+        @include font-size(1.5000); // 24px
+
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-21;
+    }
+
+    .details {
+        margin-bottom: $spacing-55;
+    }
+
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Registration
+        </title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="assets/styles/style.css">
+    </head>
+    <body>
+
+        <!-- NOTIFICATION -->
+        <div class="m-notifications">
+            <div class="m-notification error">
+                <div class="m-notification-cls">
+                    <svg viewBox="0 0 191.414 191.414">
+                        <g>
+                            <title>Close</title>
+                            <rect width="100%" height="100%" fill="#ffffff" fill-opacity="0" />
+                            <path d="M107.888,96.142l80.916-80.916c3.48-3.48,3.48-8.701,0-12.181s-8.701-3.48-12.181,0L95.707,83.961L14.791,3.045 c-3.48-3.48-8.701-3.48-12.181,0s-3.48,8.701,0,12.181l80.915,80.916L2.61,177.057c-3.48,3.48-3.48,8.701,0,12.181 c1.74,1.74,5.22,1.74,6.96,1.74s5.22,0,5.22-1.74l80.916-80.916l80.916,80.916c1.74,1.74,5.22,1.74,6.96,1.74 c1.74,0,5.22,0,5.22-1.74c3.48-3.48,3.48-8.701,0-12.181L107.888,96.142z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="message">Your payment method was rejected.</div>
+            </div>
+        </div>
+
+
+        <!-- MODAL - REMOVE PAYPAL MODAL - START -->
+        <section id="modal-remove-paypal" class="m-modal m-modal-size-small">
+            <div class="con">
+                <div class="t-wrp">
+                    <div class="cls modal-remove-paypal-action">
+                        <svg viewBox="0 0 191.414 191.414">
+                            <g>
+                                <title>Close</title>
+                                <rect width="100%" height="100%" fill="#ffffff" fill-opacity="0" />
+                                <path d="M107.888,96.142l80.916-80.916c3.48-3.48,3.48-8.701,0-12.181s-8.701-3.48-12.181,0L95.707,83.961L14.791,3.045 c-3.48-3.48-8.701-3.48-12.181,0s-3.48,8.701,0,12.181l80.915,80.916L2.61,177.057c-3.48,3.48-3.48,8.701,0,12.181 c1.74,1.74,5.22,1.74,6.96,1.74s5.22,0,5.22-1.74l80.916-80.916l80.916,80.916c1.74,1.74,5.22,1.74,6.96,1.74 c1.74,0,5.22,0,5.22-1.74c3.48-3.48,3.48-8.701,0-12.181L107.888,96.142z"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="hdr">
+                        <div class="title">Remove Paypal Account</div>
+                    </div>
+
+                    <div class="bdy">
+                        Are you sure you want to remove this Paypal account?
+                    </div>
+
+                    <div class="ftr">
+                        <ul class="m-actions-list m-actions-list-right">
+                            <li>
+                                <div class="m-button m-button-secondary modal-remove-paypal-action">YES</div>
+                            </li>
+                            <li>
+                                <div class="m-button m-button-neutral modal-remove-paypal-action">NO</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MODAL - REMOVE PAYMENT METHOD MODAL - END -->
+
+
+
+        <!-- HEADER -->
+        <header id="t-header" class="t-header"></header>
+
+        <!-- CONTENT -->
+        <div id="t-content" class="t-content v-payment"></div>
+
+        <!-- FOOTER -->
+        <div id="t-footer" class="t-footer"></div>
+
+
+
+
+        <!-- LIBS -->
+        <script src="/assets/libs/jquery/jquery-3.3.1.min.js"></script>
+
+        <!-- CONTROLLERS -->
+        <script src="/assets/views/template/template.js"></script>
+        <script src="/assets/views/payment/payment.js"></script>
+
+        <script>
+            $(document).ready(function() {
+
+                // HEADER
+                $( "#t-header" ).load( "/assets/views/template/header.html", function() {
+
+                });
+
+                // CONTENT
+                $( "#t-content" ).load( "/assets/views/payment/payment.html", function() {
+
+                });
+
+                // FOOTER
+                $( "#t-footer" ).load( "/assets/views/template/footer.html", function() {
+
+                });
+
+            });
+        </script>
+
+    </body>
+</html>

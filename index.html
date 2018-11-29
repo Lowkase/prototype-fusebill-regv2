@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>
+	        Registration
+	    </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="assets/styles/style.css">
+	</head>
+    <body>
+
+
+        <!-- MODAL - FREQUENCY - START -->
+        <section id="modal-frequency" class="m-modal m-modal-size-frequency">
+            <div class="con">
+                <div class="t-wrp">
+                    <div class="cls modal-frequency-cancel-action">
+                        <svg viewBox="0 0 191.414 191.414">
+                            <g>
+                                <title>Close</title>
+                                <rect width="100%" height="100%" fill="#ffffff" fill-opacity="0" />
+                                <path d="M107.888,96.142l80.916-80.916c3.48-3.48,3.48-8.701,0-12.181s-8.701-3.48-12.181,0L95.707,83.961L14.791,3.045 c-3.48-3.48-8.701-3.48-12.181,0s-3.48,8.701,0,12.181l80.915,80.916L2.61,177.057c-3.48,3.48-3.48,8.701,0,12.181 c1.74,1.74,5.22,1.74,6.96,1.74s5.22,0,5.22-1.74l80.916-80.916l80.916,80.916c1.74,1.74,5.22,1.74,6.96,1.74 c1.74,0,5.22,0,5.22-1.74c3.48-3.48,3.48-8.701,0-12.181L107.888,96.142z"/>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="hdr">
+                        <div class="title">Payment Frequency</div>
+                    </div>
+
+                    <div class="bdy">
+                        <div class="frequency-help">
+                            Select the frequency of payment for this plan:
+                        </div>
+
+                        <div class="frequency-list">
+                        	<div class="frequency-item">
+                        		<div class="price-freq">$999,999,999.99 USD / every xxx months</div>
+                        		<div class="marketing">marketing text marketing text marketing text marketing text</div>
+                        		<div class="action">
+                        			<a href="configure.html" class="m-button m-button-tall-plan plan-select-action">Choose</a>
+                        		</div>
+                        	</div>
+                        	<div class="frequency-item">
+                        		<div class="price-freq">$999,999,999.99 USD / every xxx months</div>
+                        		<div class="marketing">marketing text marketing text marketing text marketing text</div>
+                        		<div class="action">
+                        			<a href="configure.html" class="m-button m-button-tall-plan plan-select-action">Choose</a>
+                        		</div>
+                        	</div>
+                        	<div class="frequency-item">
+                        		<div class="price-freq">$999,999,999.99 USD / every xxx months</div>
+                        		<div class="marketing">marketing text marketing text marketing text marketing text</div>
+                        		<div class="action">
+                        			<a href="configure.html" class="m-button m-button-tall-plan plan-select-action">Choose</a>
+                        		</div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MODAL - FREQUENCY - END -->
+
+
+
+
+    	<!-- HEADER -->
+    	<header id="t-header" class="t-header"></header>
+
+		<!-- CONTENT -->
+    	<div id="t-content" class="t-content v-select"></div>
+
+    	<!-- FOOTER -->
+		<div id="t-footer" class="t-footer"></div>
+
+
+
+
+		<!-- LIBS -->
+		<script src="/assets/libs/jquery/jquery-3.3.1.min.js"></script>
+
+		<!-- CONTROLLERS -->
+		<script src="/assets/views/template/template.js"></script>
+		<script src="/assets/views/select/select.js"></script>
+
+		<script>
+            $(document).ready(function() {
+
+            	// HEADER
+				$( "#t-header" ).load( "/assets/views/template/header.html", function() {
+
+				});
+
+            	// CONTENT
+				$( "#t-content" ).load( "/assets/views/select/select.html", function() {
+
+				});
+
+            	// FOOTER
+				$( "#t-footer" ).load( "/assets/views/template/footer.html", function() {
+
+				});
+
+            });
+        </script>
+
+	</body>
+</html>

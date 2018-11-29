@@ -1,0 +1,88 @@
+// --------------------------------------------------------------------------------
+// TEMPLATE - FOOTER
+//---------------------------------------------------------------------------------
+.t-footer {
+    @include font-size(0.8750); // 14px
+    @include j-cf();
+
+    background: $footer-bg;
+    border-top: 1px solid $template-border-color;
+    color: $footer-font;
+    padding: $spacing-21;
+    
+    > div {
+        @include j-column(.25);
+
+        margin-bottom: $spacing-21;
+    }
+    @media (max-width: 1024px) {
+        > div {
+            @include j-column(.5, $cycle: 2);
+        }
+    }
+    @media (max-width: 600px) {
+        > div {
+            @include j-column(1,  $cycle: 1);
+        }
+    }
+
+    .title {
+        @include font-size(1.0000); // 16px
+
+        font-weight: $font-weight-semibold;
+        margin-bottom: $spacing-5;
+    }
+
+    .company {
+        a {
+            color: $footer-font;
+            display: block;
+            text-decoration: underline;
+        }
+
+        .terms-conditions {
+            margin-top: $spacing-8;
+        }        
+    }
+
+    .emails a {
+        color: $footer-font;
+        display: block;
+    }
+
+    .social {
+        @include j-cf();
+
+        a {
+            @include transition (all $transition-timer-400ms $transition-easeInOutQuad);
+
+            background: $footer-social-media-icon-background;
+            border-radius: $template-border-radius;
+            display: block;
+            float: left;
+            margin-right: $spacing-8;
+            padding: $spacing-8 $spacing-8 $spacing-5 $spacing-8;
+            text-decoration: none;
+
+            svg {
+                @include transition(all $transition-timer-400ms $transition-easeInOutQuad); 
+                
+                height: 24px;
+                width: 24px;
+
+                .social-icon-color {
+                    fill: $footer-social-media-icon-color;
+                }
+            }            
+        }
+        a:hover {
+            background: $footer-social-media-icon-background-hover;
+
+            svg {
+                .social-icon-color {
+                    fill: $footer-social-media-icon-color-hover;
+                }            
+            }
+        }
+    }
+}

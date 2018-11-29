@@ -1,0 +1,62 @@
+﻿// --------------------------------------------------------------------------------
+// MODULE - TABLE  
+// --------------------------------------------------------------------------------
+.m-table {
+   
+    svg {
+        height: 20px;
+    }
+
+    .hdr {
+        @include font-size(0.8125); // 13px
+        @include j-cf();
+
+        background: $template-generic-header-background;
+        border-bottom: 1px solid $template-border-color;
+        color: $template-generic-header-font-color;
+        font-weight: $template-generic-header-font-weight;
+        text-transform: uppercase;
+
+        > div {
+            @include text-truncate();
+
+            height: $fixed-table-row-height;
+            line-height: $fixed-table-text-line-height;
+            padding: $spacing-8 $spacing-13;
+        }
+    }
+
+    .bdy {
+        .row {
+            @include j-cf();
+
+            border-bottom: 1px solid $template-border-color;
+
+            > div {
+                @include text-truncate();
+
+                height: $fixed-table-row-height;
+                line-height: $fixed-table-text-line-height;
+                padding: $spacing-8 $spacing-13;
+
+                * {
+                    @include text-truncate();
+                }
+           }
+        }
+        .row:last-child {
+            border-bottom: 0;
+        }
+
+        .lbl {
+            @include font-size(0.7500); // 12px
+
+            color: $template-label-font-color;
+            display: none;
+            font-weight: $template-label-font-weight;
+            margin-bottom: $spacing-3;
+            text-transform: uppercase;
+        }
+    }
+
+}

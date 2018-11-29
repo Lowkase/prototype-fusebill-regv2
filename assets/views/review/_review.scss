@@ -1,0 +1,316 @@
+// --------------------------------------------------------------------------------
+// VIEW - REVIEW
+//---------------------------------------------------------------------------------
+
+$fixed-review-payment-type-icon-size: 20px;
+
+
+.v-review {
+
+	// SECTION TITLE
+	.section-title {
+		@include font-size(1.5000); // 24px
+
+		margin-bottom: $spacing-3;
+	}
+
+
+	// CHANGE
+	.change {
+		@include font-size(0.8125); // 13px
+		@include transition(all $transition-timer-400ms $transition-easeInOutQuad); 
+
+		color: $review-change-font-color;
+		cursor: pointer;
+	}
+	.change:hover {
+		color: darken($review-change-font-color, 10%);
+	}
+
+
+	// INFORMATION PAYMENT
+	.information-payment {
+		margin-bottom: $spacing-34;
+
+        .payment .payment-type-id {
+        	@include j-cf();
+
+        	svg {
+        		display: block;
+        		float: left;
+        		height: $fixed-review-payment-type-icon-size;
+        		margin-right: $spacing-5;
+        		width: $fixed-review-payment-type-icon-size;
+        	}
+        	div {
+				float: left;
+        	}
+        }
+
+        @media (max-width: 768px) {
+            .lft, .rgt {
+            	@include j-column(1);
+            }
+
+            .rgt {
+            	margin-top: $spacing-21;
+            }
+        }
+	}
+
+
+	// INVOICE PREVIEW - START
+	.invoice-preview {
+
+	    // LIST - START
+	    .m-table {
+	    	border: 1px solid $template-border-color;
+
+		    .hdr {
+			    .hdr-col-description { 
+			    	@include j-span(.4); 
+			    }
+			    
+			    .hdr-col-quantity { 
+			    	@include j-span(.2); text-align: center;
+			    }
+			    
+			    .hdr-col-unit-price { 
+			    	@include j-span(.2);
+			    	text-align: right;
+			    }
+
+	            .hdr-col-amount { 
+	            	@include j-span(.2); 
+	            	text-align: right; 
+	            }
+		    }
+
+		    .bdy {
+		        .row {
+	                > div {
+	                    height: auto;
+	                }
+
+			        .bdy-col-description { 
+	                    @include j-span(.4); 
+	                }
+			        
+	                .bdy-col-quantity { 
+	                    @include j-span(.2); 
+			        	
+						text-align: center;
+
+	                    input {
+			        		width: 50px;
+			        	}
+			        }
+			        
+	                .bdy-col-unit-price { 
+	                    @include j-span(.2);
+
+	                    text-align: right;
+	                }
+	                
+	                .bdy-col-amount { 
+	                    @include j-span(.2); 
+
+	                    text-align: right;
+	                }
+		        }
+		    }
+
+	        @media (max-width: 1024px) {
+	            @include table-card();
+
+			    .hdr {
+				    .hdr-col-unit-price { 
+				    	text-align: rileftght;
+				    }
+
+		            .hdr-col-amount { 
+		            	text-align: left; 
+		            }
+			    }
+
+	            .bdy .row {
+			        .bdy-col-description, .bdy-col-quantity, .bdy-col-unit-price, .bdy-col-amount {
+	                    @include j-column(6/12, $cycle:2);
+			        }
+
+			        .bdy-col-description { 
+	                }
+			        
+	                .bdy-col-quantity { 
+						text-align: left;
+			        }
+			        
+	                .bdy-col-unit-price { 
+	                    text-align: left;
+	                }
+	                
+	                .bdy-col-amount { 
+	                    text-align: left;
+	                }
+	            }
+	        }
+
+	        @media (max-width: 500px) {
+	            @include table-card-min(false);
+	        }
+	    }
+	    // LIST - END
+
+
+		.invoice-terms-totals {
+			@include j-cf();
+
+			padding: $spacing-13 $spacing-13 0 0;
+		}
+
+
+		.invoice-terms {
+			@include font-size(0.7500); // 12px
+			@include j-column(4/12);
+	        @media (max-width: 640px) {
+	            @include j-column(1);
+
+	            margin-bottom: $spacing-13;
+	            text-align: right;
+	        }		
+		}
+
+	}
+	// INVOICE PREVIEW - END
+
+
+	// INVOICE TOTALS - START
+	.invoice-totals {
+		@include j-column(8/12);
+        @media (max-width: 640px) {
+            @include j-column(1);
+        }
+
+		text-align: right;
+
+		.coupon {
+			margin-bottom: $spacing-13;
+
+			.coupon-apply, .coupon-applied {
+				@include j-cf();
+
+				> div {
+					display: inline-block;
+				}
+			}
+
+			.coupon-applied, .coupon-error {
+				display: none;
+			}
+
+			.coupon-applied {
+				.label {
+					display: inline;
+				}
+
+				.coupon-label {
+					@include text-truncate();
+
+					margin-top: $spacing-3;
+				}
+
+				.m-button {
+					margin-left: $spacing-8;
+				}
+			}
+
+			.coupon-error {
+				@include font-size(0.8750); // 14px
+
+				color: $color-red;
+				display: none;
+				margin-top: $spacing-5;
+				text-align: right;
+			}
+
+	        @media (max-width: 500px) {
+				.coupon-apply, .coupon-applied {
+					> div {
+						display: block;
+					}
+				}
+
+				.coupon-applied {
+					.label {
+						display: block;
+					}
+				}
+
+				.m-button {
+					float: right;
+					margin-top: $spacing-5;
+				}
+	        }
+		}
+
+		.subtotal, .discount, .total {
+			> div {
+				display: inline-block;
+			}
+		}
+
+		.discount {
+			display: none;
+		}
+
+		.total {
+			margin-top: $spacing-13;
+
+			> div {
+				font-weight: $font-weight-semibold;
+			}
+		}
+
+		.change {
+			text-align: right;
+		}
+	}
+	// INVOICE TOTALS - END
+
+
+	// TERMS-BUY
+	.terms-buy {
+		margin-top: $spacing-34;
+
+		text-align: center;
+
+		.terms {
+			margin-bottom: $spacing-21;
+
+			> * {
+				display: inline-block;
+			}
+
+			a {
+				color: $review-terms-font-color;
+			}
+
+			a:hover {
+				color: darken($review-terms-font-color, 10%);
+			}
+		}
+
+		.m-button-buy {
+			margin-bottom: $spacing-21;
+		}
+
+		.m-button-test-buy-error {
+			margin-left: $spacing-13;
+
+	        @media (max-width: 500px) {
+	           margin: 0;
+	        }			
+		}
+	}
+
+}

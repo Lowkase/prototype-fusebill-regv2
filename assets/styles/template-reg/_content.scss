@@ -1,0 +1,14 @@
+// --------------------------------------------------------------------------------
+// TEMPLATE - CONTENT
+//---------------------------------------------------------------------------------
+.t-content {
+    background: $content-bg;
+    border-bottom: 0;
+    color: $content-font;
+    margin: 0;
+    min-height: $fixed-content-min-height;
+}
+
+.t-content-section {
+	padding: $spacing-13;	
+}

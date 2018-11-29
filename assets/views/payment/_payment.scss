@@ -1,0 +1,144 @@
+// --------------------------------------------------------------------------------
+// VIEW - PAYMENT
+//---------------------------------------------------------------------------------
+.v-payment {
+
+    // PAYMENT METHOD SELECTOR
+    .payment-method-selector {
+        @include j-cf();
+
+        border-bottom: 1px solid $template-border-color;
+        padding-bottom: $spacing-13;
+
+        .payment-method {
+            @include font-size(0.8750); // 14px
+            @include transition(background $transition-timer-400ms $transition-easeInOutQuad); 
+            @include j-column(3/12, $cycle:4);
+
+            background: $payment-method-selector-background;
+            border: 1px solid $template-border-color;
+            color: $payment-method-selector-font-color;
+            cursor: pointer;
+            padding: $spacing-8 $spacing-13;
+
+            > div {
+                text-align: center;
+            }
+
+            .icon {
+                svg {
+                    height: $fixed-payment-method-selector-icon-size;
+                    fill: $payment-method-selector-font-color;
+                    width: $fixed-payment-method-selector-icon-size;
+                }
+            }
+
+            .text {
+
+            }
+
+            &.active, &:hover {
+                background: $payment-method-selector-background-hover;
+                color: $payment-method-selector-font-color-hover;
+
+                .icon {
+                    svg {
+                        fill: $payment-method-selector-font-color-hover;
+                    }
+                }                
+            }
+
+            @media (max-width: 600px) {
+                @include j-column(6/12, $cycle:2);
+            }       
+        }
+
+        @media (max-width: 600px) {
+            .payment-method:nth-last-child(-n+2) {
+                margin-top: 13px;
+            }
+        }
+    }
+
+
+    // PAYMENT FORMS
+    .payment-forms > div {
+        margin: $spacing-21 $spacing-13 $spacing-13 $spacing-13;
+
+        @media ($bp-tablet) {
+            .t-grid {
+                .lft, .rgt {
+                    width: 100%;
+                }
+
+                .rgt {
+                    margin: $spacing-21 0 0 0;
+                }
+            }
+        }        
+    }
+
+
+    // PAYMENT FORM - CREDIT CARD
+    .payment-form-credit-card {
+        .cards {
+            @include j-cf();
+
+            margin-bottom: $spacing-13;
+
+            li {
+                float: left;
+                margin-right: $spacing-13;
+            }
+            li:last-child {
+                margin-right: 0;
+            }
+
+            svg {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        .expiry {
+            @include j-cf();
+
+            > div {
+                @include j-column(6/12);
+            }
+        }
+
+        .cvv {
+            width: 100px;
+        }
+
+        .zip-postal-code {
+            width: 120px;
+        }
+    }
+
+
+    // PAYMENT FORM - BANK ACCOUNT
+    .payment-form-bank-account {
+        display: none;
+
+        .ach-check-help {
+            margin-top: $spacing-13;
+        }
+
+        @media (max-width: 420px) {
+            .ach-check-help {
+                width: 260px;
+            }
+        }
+    }
+
+
+    // PAYMENT FORM - PAYPAL / NONE
+    .payment-form-paypal, .payment-form-none {
+        @include font-size(0.8750); // 14px
+
+        display: none;
+    }
+
+}

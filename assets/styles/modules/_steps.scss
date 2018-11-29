@@ -1,0 +1,125 @@
+// --------------------------------------------------------------------------------
+// MODULES - STEPS
+// --------------------------------------------------------------------------------
+
+// PROGRESS LINE
+.m-steps-progress {
+	@include position(absolute, $top: $fixed-steps-progress-line-top, $right: 0, $left: 0);
+
+	background: $steps-progressbar-background;
+	height: $fixed-steps-progress-line-height;
+	margin: 0 auto;
+	width: $fixed-steps-progress-line-width;
+}
+@media (max-width: 550px) {
+	.m-steps-progress  {
+		top: $fixed-steps-progress-line-top-mobile;
+	}
+}
+
+
+// STEPS
+.m-steps {
+	@include j-cf();  
+	@include position(absolute, $top: $fixed-steps-top, $left: 0);
+
+	width: 100%;
+}
+
+
+// STEP
+.m-steps > a {
+	@include j-span(.2);
+
+	cursor: pointer;
+	float: left;
+	text-align: center;
+	text-decoration: none;
+
+	> span {
+		display: block;
+	}
+
+	.number {
+		@include font-size(1.0000); // 16px
+		@include transition(all $transition-timer-400ms $transition-easeInOutQuad);	
+
+		background: $steps-step-background;
+		border: 2px solid $steps-step-border;
+		border-radius: 50%;
+		color: $steps-step-number-font;
+		display: inline-block;
+		height: $fixed-steps-step-size;
+		padding-top: 7px;
+		text-align: center;
+		width: $fixed-steps-step-size;
+	}
+
+	.text {
+		@include font-size(0.875); // 14px
+		@include transition(all $transition-timer-400ms $transition-easeInOutQuad);	
+
+		color: $steps-step-text-font;
+
+		.info-small {
+			display: none;
+		}
+	}
+}
+@media (max-width: 550px) {
+	.m-steps > a {
+		.number {
+			@include font-size(0.875); // 14px
+
+			height: $fixed-steps-step-size-mobile;
+			padding-top: $spacing-3;
+			width: $fixed-steps-step-size-mobile;
+		}
+
+		.text {
+			@include font-size(0.75); // 12px
+
+			.info-big {
+				display: none;
+			}
+
+			.info-small {
+				display: inline;
+			}
+		}
+	}
+} 
+
+
+// HOVER
+.m-steps > a:hover {
+	.number {
+		background: $steps-step-background-hover;
+		border: 2px solid $steps-step-border-hover;
+		color: $steps-step-number-font-hover;
+	}
+	.text {
+		color: $steps-step-text-font-hover;
+	}
+}
+
+
+// ACTIVE
+.m-steps .active {
+	.number {
+		background: $steps-step-active-background;
+		border: 2px solid $steps-step-active-background;
+		color: $steps-step-active-number-font;
+	}
+
+	.text {
+		color: $steps-step-active-text-font;
+	}
+}
+.m-steps .active:hover {
+	.number {
+		background: $steps-step-active-background;
+		color: $steps-step-active-number-font;
+	}
+}
+

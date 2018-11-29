@@ -1,0 +1,43 @@
+// --------------------------------------------------------------------------------
+// TEMPLATE - SUBHEADER
+//---------------------------------------------------------------------------------
+.t-subheader {
+	@include j-cf();
+
+	background: $nav-background;
+    border-bottom: 1px solid $template-border-color;
+    padding: $spacing-13;
+
+	.title {
+		@include j-column(6/12);
+
+		padding-top: $spacing-3;
+
+		> div:first-child {
+			@include font-size(1.2500); // 20px
+		}
+
+		> div:last-child {
+			@include font-size(0.8750); // 14px
+		}
+	}
+
+	.title-full-width {
+		@include j-column(1);
+	}
+
+	.util {
+		@include j-column(6/12);	
+	}
+
+	@media (max-width: 420px) {
+		.title {
+			@include j-column(1);
+		}
+		.util {
+			@include j-column(1);
+
+			margin-top: $spacing-13;
+		}
+	}	
+}

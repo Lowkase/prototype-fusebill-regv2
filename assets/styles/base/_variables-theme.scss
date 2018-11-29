@@ -1,0 +1,218 @@
+// --------------------------------------------------------------------------------
+// VARIABLES - TEMPLATE
+// --------------------------------------------------------------------------------
+
+	// FONTS
+    // --------------------------------------------------------------------------------
+	$template-font: 											'Open Sans', sans-serif;
+	$template-font-color:										$color-gray-900;
+	$template-font-weight: 										$font-weight-regular;
+
+
+	// BORDERS
+    // --------------------------------------------------------------------------------
+	$template-border-color: 									$color-gray-100;
+	$template-border-radius: 									3px;
+
+
+	// LABELS
+    // --------------------------------------------------------------------------------
+	$template-label-font-color:                 				$color-gray-600;
+	$template-label-font-weight:                				$font-weight-semibold;
+
+
+    // BUTTONS / ACTIONS
+    // --------------------------------------------------------------------------------
+    $template-button-disabled: 					            	$color-gray-200;
+    $template-button-disabled-font-color:                   	$color-gray-900;
+
+    $template-button-neutral: 					            	$color-gray-50;
+    $template-button-neutral-font-color:                    	$color-gray-900;
+    $template-button-neutral-hover: 				        	$color-gray-100;
+    $template-button-neutral-hover-font-color:              	$color-gray-900;
+
+    $template-button-primary: 					            	$color-blue;
+    $template-button-primary-font-color:                    	$color-white;
+    $template-button-primary-hover: 				        	$color-blue-hover;
+    $template-button-primary-hover-font-color:              	$color-white;
+
+
+	// GENERIC HEADER - CARDS / MODALS / TABLES
+	// --------------------------------------------------------------------------------
+	$template-generic-header-background:              			$color-gray-50;
+	$template-generic-header-font-color: 						$color-gray-900;
+	$template-generic-header-font-weight:             			$font-weight-regular;
+
+
+
+
+// --------------------------------------------------------------------------------
+// VARIABLES - LAYOUT
+// --------------------------------------------------------------------------------
+
+	// HEADER
+	// --------------------------------------------------------------------------------
+	$header-background:											$color-white;
+
+
+	// NAV
+	// --------------------------------------------------------------------------------
+	$nav-background: 											$color-white;
+
+
+	// CONTENT
+	// --------------------------------------------------------------------------------
+	$content-bg:												$color-gray-75;
+	$content-font: 												$template-font-color;
+
+
+	// FOOTER
+	// --------------------------------------------------------------------------------
+	$footer-bg: 												$color-gray-25;
+	$footer-font: 												$template-font-color;
+	$footer-social-media-icon-background: 						$template-button-primary;
+	$footer-social-media-icon-background-hover:					$template-button-primary-hover;
+	$footer-social-media-icon-color: 							$template-button-primary-font-color;
+	$footer-social-media-icon-color-hover:						$template-button-primary-hover-font-color;
+
+
+	// BODY
+	// --------------------------------------------------------------------------------
+	// This setting ensures the footer color is persisted if the content of the page does not fill the viewport
+	$template-background: 										$footer-bg;
+
+
+
+
+// --------------------------------------------------------------------------------
+// VARIABLES - MODULES
+// --------------------------------------------------------------------------------
+
+
+	// PLAN LIST
+	// --------------------------------------------------------------------------------
+	$m-addon-list-item-per-row:									4; // 1,2,3,4,5,6
+
+	$m-addon-list-item-bg:										$color-white;
+	$m-addon-list-item-bg-hover:								$color-gray-50;
+	$m-addon-list-item-border-color:							transparent;
+	$m-addon-list-item-fixed-height: 							350px; // auto = not fixed, ###px = fixed
+
+	$m-addon-list-item-name-color: 								$color-gray-900;
+	$m-addon-list-item-name-font-size:							18px;
+	$m-addon-list-item-name-font-weight:						$font-weight-light;
+
+	$m-addon-list-item-description-color: 						$color-gray-900;
+	$m-addon-list-item-description-font-size:					14px;
+	$m-addon-list-item-description-font-weight:					$font-weight-light;
+
+	$m-addon-list-item-quantity-top: 							150px;
+	$m-addon-list-item-quantity-label-color:					$color-gray-900;
+
+	$m-addon-list-item-price-top: 								200px;
+	$m-addon-list-item-price-color: 							$color-gray-900;
+	$m-addon-list-item-price-font-size:							18px;
+	$m-addon-list-item-price-font-weight:						$font-weight-light;
+	$m-addon-list-item-varies-font-color:						$color-blue;
+
+	$m-addon-list-item-include-check: 							$color-gray-900;
+	$m-addon-list-item-include-check-active: 					$color-white;
+
+	$m-addon-list-item-include-active-bg:						$color-blue;
+	$m-addon-list-item-include-active-name-color: 				$color-white;
+	$m-addon-list-item-include-active-description-color: 		$color-white;
+	$m-addon-list-item-include-active-quanity-label-color:		$color-white;
+	$m-addon-list-item-include-active-price-color: 				$color-white;
+	$m-addon-list-item-active-varies-font-color:				$color-white;
+
+
+	// FREQUENCY
+	// --------------------------------------------------------------------------------
+	$m-plan-frequency-bg:										$color-white;
+	$m-plan-frequency-bg-hover:									$color-gray-50;
+	$m-plan-frequency-border-color:								transparent;
+	$m-plan-frequency-fixed-height: 							200px; // auto = not fixed, ###px = fixed
+
+	$m-plan-frequency-price-freq-color: 						$color-gray-600;
+	$m-plan-frequency-price-freq-font-size:						18px;
+	$m-plan-frequency-price-freq-font-weight:					$font-weight-light;
+
+	$m-plan-frequency-marketing-color: 							$color-gray-600;
+	$m-plan-frequency-marketing-font-size:						14px;
+	$m-plan-frequency-marketing-font-weight:					$font-weight-light;
+
+	$m-plan-frequency-button-bg: 								$color-gray-500;
+	$m-plan-frequency-button-bg-hover:							$color-gray-600;
+	$m-plan-frequency-button-text: 								$color-white;
+	$m-plan-frequency-button-text-hover:						$color-white;
+
+
+	// LOADING
+	// --------------------------------------------------------------------------------
+	$m-loading-spinner-color:              						$template-button-primary;
+
+
+	// PLAN LIST
+	// --------------------------------------------------------------------------------
+	$m-plan-list-plans-per-row: 								3; // 1,2,3,4,5,6
+
+	$m-plan-list-plan-bg:										$color-white;
+	$m-plan-list-plan-bg-hover:									$color-gray-50;
+	$m-plan-list-plan-border-color:								transparent;
+	$m-plan-list-plan-fixed-height: 							450px; // auto = not fixed, ###px = fixed
+
+	$m-plan-list-plan-name-color: 								$color-gray-600;
+	$m-plan-list-plan-name-font-size:							28px;
+	$m-plan-list-plan-name-font-weight:							$font-weight-light;
+
+	$m-plan-list-plan-price-color: 								$color-gray-600;
+	$m-plan-list-plan-price-font-size:							16px;
+	$m-plan-list-plan-price-font-weight:						$font-weight-light;
+
+	$m-plan-list-plan-details-color: 							$color-gray-600;
+	$m-plan-list-plan-details-font-size:						14px;
+	$m-plan-list-plan-details-font-weight:						$font-weight-light;
+
+	$m-plan-list-plan-button-bg: 								$color-gray-500;
+	$m-plan-list-plan-button-bg-hover:							$color-gray-600;
+	$m-plan-list-plan-button-text: 								$color-white;
+	$m-plan-list-plan-button-text-hover:						$color-white;
+
+
+	// STEPS
+	// --------------------------------------------------------------------------------
+	$steps-progressbar-background:								$color-gray-200;
+	$steps-step-background:										$color-white;
+	$steps-step-background-hover: 								$color-white;
+	$steps-step-border: 										$color-gray-200;
+	$steps-step-border-hover: 									$color-orange;	
+	$steps-step-number-font: 									$color-gray-200;
+	$steps-step-number-font-hover: 								$color-orange;
+	$steps-step-text-font: 										$color-gray-200;
+	$steps-step-text-font-hover: 								$color-orange;	
+	$steps-step-active-background: 								$color-orange;
+	$steps-step-active-number-font: 							$color-white;
+	$steps-step-active-text-font: 								$color-orange;
+
+
+
+
+// --------------------------------------------------------------------------------
+// VARIABLES - VIEWS
+// --------------------------------------------------------------------------------
+
+	// PAYMENT
+	// --------------------------------------------------------------------------------
+	$payment-method-selector-background: 						$color-white;
+	$payment-method-selector-background-hover: 					$color-gray-50;
+	$payment-method-selector-font-color: 						$template-font-color;
+	$payment-method-selector-font-color-hover:					$template-font-color;
+	$payment-method-paypal-color: 								$color-blue;
+
+	// REVIEW
+	// --------------------------------------------------------------------------------
+	$review-change-font-color: 									$color-blue;
+	$review-terms-font-color: 									$color-blue;
+
+
+

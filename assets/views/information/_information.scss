@@ -1,0 +1,22 @@
+// --------------------------------------------------------------------------------
+// VIEW - INFORMATION
+//---------------------------------------------------------------------------------
+.v-information {
+
+	.use-billing-address {
+        margin-bottom: $spacing-21;
+
+        input {
+            margin-top: $spacing-8;
+        }
+    }
+
+    @media ($bp-tablet) {
+    	.t-grid {
+    		.lft, .rgt {
+    			width: 100%;
+    		}
+    	}
+    }
+
+}

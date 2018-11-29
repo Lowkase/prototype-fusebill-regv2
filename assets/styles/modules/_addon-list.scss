@@ -1,0 +1,257 @@
+// --------------------------------------------------------------------------------
+// VIEW - ADDON LIST
+//---------------------------------------------------------------------------------
+.m-addon-list {
+    > ul {
+        @include j-cf();    
+
+        @if $m-addon-list-item-per-row == 1 { margin: 0 20%; }
+        @if $m-addon-list-item-per-row == 2 { margin: 0 10%; }
+
+        margin-bottom: $spacing-8;
+
+        > li {
+            @include transition(background $transition-timer-400ms $transition-easeInOutQuad); 
+            
+            background: $m-addon-list-item-bg;
+            border: 1px solid $m-addon-list-item-border-color;
+            border-radius: $template-border-radius;
+            box-shadow: $box-shadow-all-light;
+            height: $m-addon-list-item-fixed-height;
+            margin-bottom: 1%;
+            padding: $spacing-21;
+            position: relative;
+            text-align: center;
+
+            @if $m-addon-list-item-per-row == 6 { @include j-column(2/12, $cycle:6, $gutter: 1); }
+            @if $m-addon-list-item-per-row == 5 { @include j-column(.2,   $cycle:5, $gutter: 1); }            
+            @if $m-addon-list-item-per-row == 4 { @include j-column(3/12, $cycle:4, $gutter: 1); }
+            @if $m-addon-list-item-per-row == 3 { @include j-column(4/12, $cycle:3, $gutter: 1); }
+            @if $m-addon-list-item-per-row == 2 { @include j-column(6/12, $cycle:2, $gutter: 1); }
+            @if $m-addon-list-item-per-row == 1 { @include j-column(1,    $cycle:1, $gutter: 1); }
+
+            .addon-name {
+                color: $m-addon-list-item-name-color;
+                font-size: $m-addon-list-item-name-font-size;
+                font-weight: $m-addon-list-item-name-font-weight;
+                margin-bottom: $spacing-13;
+            }
+
+            .addon-description {
+                color: $m-addon-list-item-description-color;
+                font-size: $m-addon-list-item-description-font-size;
+                font-weight: $m-addon-list-item-description-font-weight;
+                margin-bottom: $spacing-13;
+            }
+
+            .addon-quantity {
+                @include position(absolute, $top: $m-addon-list-item-quantity-top, $right: $spacing-21, $left: $spacing-21);
+
+                margin-bottom: $spacing-13;
+                text-align: center;
+
+                label {
+                    color: $m-addon-list-item-quantity-label-color;
+                    display: inline;
+                    margin-bottom: $spacing-3;
+                }
+
+                > div {
+                    display: inline;
+                }
+
+                input {
+                    width: 70px;
+                }
+
+                .quatity-label {
+                    height: 36px;
+                    padding-top: $spacing-8;
+                }
+            }
+
+            .addon-price {
+                @include position(absolute, $top: $m-addon-list-item-price-top, $right: $spacing-21, $left: $spacing-21);
+
+                color: $m-addon-list-item-price-color;
+                font-size: $m-addon-list-item-price-font-size;
+                font-weight: $m-addon-list-item-price-font-weight;
+                margin-bottom: $spacing-21;
+                vertical-align: top;
+
+                .varies {
+                    @include font-size(0.7500); // 12px
+                    @include transition(all $transition-timer-400ms $transition-easeInOutQuad); 
+
+                    color: $m-addon-list-item-varies-font-color;
+                    cursor: pointer;
+                }
+                .varies:hover {
+                    color: darken($m-addon-list-item-varies-font-color, 10%);
+                }
+            }
+
+            .addon-action {
+                @include position(absolute, $right: $spacing-21, $bottom: $spacing-21, $left: $spacing-21);
+
+                .addon-include  {
+                    margin: 0 auto;
+                    width: $fixed-configure-include-control-width;
+
+                    input {
+                        display:none;
+
+                        &[type=checkbox]:checked + label {
+                            #checkmark {
+                                @include transition(opacity 0.1s ease-in);
+                                
+                                opacity:1;
+                            }
+
+                            .border {
+                                fill: $m-addon-list-item-include-check-active;
+                            }  
+                        }
+
+                        &[type=checkbox]:hover + label {
+                            #checkmark {
+                                fill: $m-addon-list-item-include-check;
+                                opacity:1;
+                            }
+
+                            .border {
+                                fill: $m-addon-list-item-include-check;
+                            }  
+                        }
+                    }
+
+                    label {
+                        display:block;
+                        cursor: pointer;
+                        height: $fixed-configure-include-control-height;
+                        width: $fixed-configure-include-control-width;
+
+                        svg {
+                            display:block;
+                            height: $fixed-configure-include-control-height;
+                            width: $fixed-configure-include-control-width;
+                        }
+
+                        #checkmark {
+                            @include transition(opacity 0.25s ease-out);
+
+                            fill: $m-addon-list-item-include-check-active;
+                            opacity:0;
+                        }
+
+                        .border {
+                            fill: $m-addon-list-item-include-check;
+                        }                        
+                    }
+                }
+            }
+        }
+
+        > li:hover {
+            background: $m-addon-list-item-bg-hover;
+        }
+
+        > li.include-active, > li.include-default {
+            background: $m-addon-list-item-include-active-bg;
+
+            .addon-name {
+                color: $m-addon-list-item-include-active-name-color;
+            }
+
+            .addon-description {
+                color: $m-addon-list-item-include-active-description-color;
+            }
+
+            .addon-quantity {
+                label, .quatity-label {
+                    color: $m-addon-list-item-include-active-quanity-label-color;
+                }
+            }
+
+            .addon-price {
+                color: $m-addon-list-item-include-active-price-color;
+
+                .varies {
+                    color: $m-addon-list-item-active-varies-font-color;
+                }
+                .varies:hover {
+                    color: darken($m-addon-list-item-active-varies-font-color, 10%);
+                }
+            }
+
+            .addon-action {
+                .addon-include  {
+                    input {
+                        &[type=checkbox]:hover + label {
+                            #checkmark {
+                                fill: $m-addon-list-item-include-check-active;
+                            }
+
+                            .border {
+                                fill: $m-addon-list-item-include-check-active;
+                            }  
+                        }
+                    }
+                }
+            }
+        }
+
+
+        @media (max-width: 1280px) {
+            > li {
+                @if $m-addon-list-item-per-row == 6 { @include j-column(4/12, $cycle:3, $gutter: 1); }
+            }
+        }
+
+        @media (max-width: 1024px) {
+            > li {
+                @if $m-addon-list-item-per-row == 1 { @include j-column(1,    $cycle:1, $gutter: 1); }
+                @if $m-addon-list-item-per-row > 1  { @include j-column(6/12, $cycle:2, $gutter: 1); }
+            }
+        }
+
+        @media (max-width: 768px) {
+            > li {
+                @include j-column(1, $cycle:1, $gutter: 2);  
+
+                height: auto;
+                margin-bottom: 4%;
+
+                .addon-action, .addon-price, .addon-quantity {
+                    @include position-relative-reset();
+                }
+            }
+        }
+
+        @media (max-width: 600px) {
+            > li {
+                @include j-column(1, $cycle:1, $gutter: 2);
+
+                height: auto;
+
+                .addon-action, .addon-price, .addon-quantity {
+                    @include position-relative-reset();
+                }               
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+    	padding: 2%;
+
+        > ul {
+            @if $m-addon-list-item-per-row == 2 { margin: auto; }
+        }
+    }
+
+    @media (max-width: 600px) {
+        > ul {
+            @if $m-addon-list-item-per-row == 1 { margin: auto; }
+        }
+    }
+}

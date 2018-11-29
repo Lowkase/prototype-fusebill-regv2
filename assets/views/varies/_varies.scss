@@ -1,0 +1,63 @@
+// --------------------------------------------------------------------------------
+// VIEW - VARIES
+//---------------------------------------------------------------------------------
+.v-varies {
+
+	.varied-price-title {
+		margin-bottom: $spacing-13;
+	}
+
+	.m-table {
+		border: 1px solid $template-border-color;
+
+	    .hdr {
+		    .hdr-col-range { 
+		    	@include j-span(4/12); 
+		    }
+		    
+		    .hdr-col-price { 
+		    	@include j-span(8/12);
+
+		    	text-align: right;
+		    }
+	    }
+
+	    .bdy {
+	        .row {
+	            > div {
+	                height: auto;
+	            }
+
+		        .bdy-col-range { 
+	                @include j-span(4/12); 
+	            }
+		        
+	            .bdy-col-price { 
+	                @include j-span(8/12); 
+		        	
+					text-align: right;
+		        }
+	        }
+	    }
+
+	    @media (max-width: 500px) {
+	        @include table-card();	    	
+	        @include table-card-min(false);
+
+		    .hdr {
+			    .hdr-col-price { 
+			    	text-align: left;
+			    }
+		    }
+
+		    .bdy {
+		        .row {
+		            .bdy-col-price { 
+						text-align: left;
+			        }
+		        }
+		    }     
+	    }
+	}
+
+}

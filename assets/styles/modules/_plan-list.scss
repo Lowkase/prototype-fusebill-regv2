@@ -1,0 +1,132 @@
+// --------------------------------------------------------------------------------
+// VIEW - SELECT PLAN
+//---------------------------------------------------------------------------------
+.m-plan-list {
+    > ul {
+        @include j-cf();    
+
+        @if $m-plan-list-plans-per-row == 1 { margin: 0 20%; }
+        @if $m-plan-list-plans-per-row == 2 { margin: 0 10%; }
+
+        > li {
+            @include transition(background $transition-timer-400ms $transition-easeInOutQuad); 
+            
+            background: $m-plan-list-plan-bg;
+            border: 1px solid $m-plan-list-plan-border-color;
+            border-radius: $template-border-radius;
+            box-shadow: $box-shadow-all-light;
+            height: $m-plan-list-plan-fixed-height;
+            margin-bottom: 1%;
+            padding: $spacing-21;
+            position: relative;
+            text-align: center;
+
+            @if $m-plan-list-plans-per-row == 6 { @include j-column(2/12, $cycle:6, $gutter: 1); }
+            @if $m-plan-list-plans-per-row == 5 { @include j-column(.2,   $cycle:5, $gutter: 1); }            
+            @if $m-plan-list-plans-per-row == 4 { @include j-column(3/12, $cycle:4, $gutter: 1); }
+            @if $m-plan-list-plans-per-row == 3 { @include j-column(4/12, $cycle:3, $gutter: 1); }
+            @if $m-plan-list-plans-per-row == 2 { @include j-column(6/12, $cycle:2, $gutter: 1); }
+            @if $m-plan-list-plans-per-row == 1 { @include j-column(1,    $cycle:1, $gutter: 1); }
+
+            .plan-name {
+                color: $m-plan-list-plan-name-color;
+                font-size: $m-plan-list-plan-name-font-size;
+                font-weight: $m-plan-list-plan-name-font-weight;
+                margin-bottom: $spacing-5;
+            }
+
+            .plan-price {
+                color: $m-plan-list-plan-price-color;
+                font-size: $m-plan-list-plan-price-font-size;
+                font-weight: $m-plan-list-plan-price-font-weight;
+                margin-bottom: $spacing-13;
+            }
+
+            .plan-image {
+                margin-bottom: $spacing-8;                
+
+                img {
+                    max-width: 200px;
+                    width: 100%;
+                }
+            }
+
+            .plan-details {
+                color: $m-plan-list-plan-details-color;
+                font-size: $m-plan-list-plan-details-font-size;
+                font-weight: $m-plan-list-plan-details-font-weight;
+                margin-bottom: $spacing-13;
+            }
+
+            .plan-action {
+                @include position(absolute, $right: $spacing-21, $bottom: $spacing-21, $left: $spacing-21);
+
+                .m-button {
+                    background: $m-plan-list-plan-button-bg;
+                    color: $m-plan-list-plan-button-text;
+                    cursor: pointer;
+                }
+                .m-button:hover {
+                    background: $m-plan-list-plan-button-bg-hover;
+                }
+            }
+        }
+
+        > li:hover {
+            background: $m-plan-list-plan-bg-hover; 
+        }
+
+
+        @media (max-width: 1280px) {
+            > li {
+                @if $m-plan-list-plans-per-row == 6 { @include j-column(4/12, $cycle:3, $gutter: 1); }
+            }
+        }
+
+        @media (max-width: 1024px) {
+            > li {
+                @if $m-plan-list-plans-per-row == 1 { @include j-column(1,    $cycle:1, $gutter: 1); }
+                @if $m-plan-list-plans-per-row > 1  { @include j-column(6/12, $cycle:2, $gutter: 1); }
+            }
+        }
+
+        @media (max-width: 768px) {
+            > li {
+                @include j-column(1, $cycle:1, $gutter: 2);  
+
+                height: auto;
+                margin-bottom: 4%;
+
+                .plan-action {
+                    @include position-relative-reset();
+                }
+            }
+        }
+
+        @media (max-width: 600px) {
+            > li {
+                @include j-column(1, $cycle:1, $gutter: 2);
+
+                height: auto;
+
+                .plan-action {
+                    @include position-relative-reset();
+                }               
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+    	padding: 2%;
+
+        > ul {
+            @if $m-plan-list-plans-per-row == 2 { margin: auto; }
+        }
+    }
+
+    @media (max-width: 600px) {
+        > ul {
+            @if $m-plan-list-plans-per-row == 1 { margin: auto; }
+        }
+    }
+}

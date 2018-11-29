@@ -1,0 +1,64 @@
+// --------------------------------------------------------------------------------
+// VIEW - FREQUENCY
+//---------------------------------------------------------------------------------
+#modal-frequency {
+	.bdy {
+		@include position(absolute, $top:$fixed-header-height, $right:0, $bottom:0, $left:0);
+
+		overflow-y: auto;
+	}
+
+    .frequency-help {
+        margin-bottom: $spacing-21;
+    }
+
+	.frequency-list {
+		@include j-cf();
+
+		.frequency-item {
+			@include j-column(6/12, $cycle:2);
+			@media (max-width: 768px) {
+			 	@include j-column(1, $cycle:1);
+			}
+
+            background: $m-plan-frequency-bg;
+            border: 1px solid $m-plan-frequency-border-color;
+            border-radius: $template-border-radius;
+            box-shadow: $box-shadow-all-light;
+            height: $m-plan-frequency-fixed-height;
+			margin-bottom: $spacing-21;
+			padding: $spacing-13;
+            position: relative;
+			text-align: center;
+
+			.price-freq {
+                color: $m-plan-frequency-price-freq-color;
+                font-size: $m-plan-frequency-price-freq-font-size;
+                font-weight: $m-plan-frequency-price-freq-font-weight;
+				margin-bottom: $spacing-13;
+			}
+
+			.marketing {
+                color: $m-plan-frequency-marketing-color;
+                font-size: $m-plan-frequency-marketing-font-size;
+                font-weight: $m-plan-frequency-marketing-font-weight;
+				margin-bottom: $spacing-13;
+			}
+
+            .action {
+                @include position(absolute, $right: $spacing-13, $bottom: $spacing-13, $left: $spacing-13);
+
+                text-align: center;
+
+                .m-button {
+                    background: $m-plan-frequency-button-bg;
+                    color: $m-plan-frequency-button-text;
+                    cursor: pointer;
+                }
+                .m-button:hover {
+                    background: $m-plan-frequency-button-bg-hover;
+                }
+            }
+		}
+	}
+}

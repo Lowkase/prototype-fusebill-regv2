@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>
+	        Registration
+	    </title>
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="assets/styles/style.css">
+	</head>
+    <body>
+
+    	<!-- HEADER -->
+    	<header id="t-header" class="t-header"></header>
+
+		<!-- CONTENT -->
+    	<div id="t-content" class="t-content v-information"></div>
+
+    	<!-- FOOTER -->
+		<div id="t-footer" class="t-footer"></div>
+
+
+
+
+		<!-- LIBS -->
+		<script src="/assets/libs/jquery/jquery-3.3.1.min.js"></script>
+
+		<!-- CONTROLLERS -->
+		<script src="/assets/views/template/template.js"></script>
+		<script src="/assets/views/information/information.js"></script>
+
+		<script>
+            $(document).ready(function() {
+
+            	// HEADER
+				$( "#t-header" ).load( "/assets/views/template/header.html", function() {
+
+				});
+
+            	// CONTENT
+				$( "#t-content" ).load( "/assets/views/information/information.html", function() {
+					informationInit();
+				});
+
+            	// FOOTER
+				$( "#t-footer" ).load( "/assets/views/template/footer.html", function() {
+
+				});
+
+            });
+        </script>
+
+	</body>
+</html>

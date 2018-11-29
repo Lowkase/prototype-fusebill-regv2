@@ -1,0 +1,16 @@
+// --------------------------------------------------------------------------------
+// TEMPLATE - NAV
+//---------------------------------------------------------------------------------
+.t-nav {
+	background: $nav-background;
+    border-bottom: 1px solid $template-border-color;
+	height: $fixed-nav-height-desktop;
+	padding: $spacing-8 $spacing-21;
+	position: relative;
+	width: 100%;
+}
+@media (max-width: 550px) {
+	.t-nav {
+		height: $fixed-nav-height-mobile;
+	}
+}
